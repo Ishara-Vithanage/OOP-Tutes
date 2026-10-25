@@ -15,6 +15,12 @@ public class ProductService {
         return products;
     }
 
+    public ProductService() {
+        products.add(new DigitalProduct(nextId++, "Fire and Blood", 18.88, "/hod/fireandblood", 45.32));
+
+        products.add(new PhysicalProduct(nextId++, "Cupboard", 26.66, 8.5, "5x8x3"));
+    }
+
     public Optional<Product> getProductById(Long id) {
         return products.stream()
                 .filter(p -> p.getId().equals(id))
